@@ -1,0 +1,22 @@
+
+# Virtual environment
+env/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Ignore model
+illness_model.pkl
+
+# Environment variables
+.env
+.env.local
+config.py
+
+# IDE / Editor specific files
+.vscode/
+.idea/
+*.swp
+.DS_Store
