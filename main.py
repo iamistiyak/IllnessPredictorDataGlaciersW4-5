@@ -15,7 +15,7 @@ MODEL_URL = "https://drive.google.com/file/d/1dk31QrP6NxE2R5rO1brDW-mUKFpro32t/v
 
 if not os.path.exists(MODEL_PATH):
     print("Downloading model...")
-    r = requests.get(MODEL_URL)
+    r = request.get(MODEL_URL)
     with open(MODEL_PATH, 'wb') as f:
         f.write(r.content)
 
