@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 import pandas as pd
 import numpy as np
-import joblib, requests
+import requests
 import os
 import gc
 
@@ -11,11 +11,11 @@ app = Flask(__name__)
 # Load trained model and expected features
 #model, expected_features = joblib.load("illness_model.pkl")
 MODEL_PATH = "illness_model.pkl"
-MODEL_URL = "https://drive.google.com/file/d/1dk31QrP6NxE2R5rO1brDW-mUKFpro32t/view?usp=sharing"
+MODEL_URL = "https://drive.google.com/uc?export=download&id=1dk31QrP6NxE2R5rO1brDW-mUKFpro32t"
 
 if not os.path.exists(MODEL_PATH):
     print("Downloading model...")
-    r = request.get(MODEL_URL)
+    r = requests.get(MODEL_URL)
     with open(MODEL_PATH, 'wb') as f:
         f.write(r.content)
 
