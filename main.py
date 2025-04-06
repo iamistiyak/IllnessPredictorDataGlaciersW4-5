@@ -9,7 +9,17 @@ import gc
 app = Flask(__name__)
 
 # Load trained model and expected features
-model, expected_features = joblib.load("illness_model.pkl")
+#model, expected_features = joblib.load("illness_model.pkl")
+MODEL_PATH = "illness_model.pkl"
+MODEL_URL = "https://drive.google.com/file/d/1dk31QrP6NxE2R5rO1brDW-mUKFpro32t/view?usp=sharing"
+
+if not os.path.exists(MODEL_PATH):
+    print("Downloading model...")
+    r = requests.get(MODEL_URL)
+    with open(MODEL_PATH, 'wb') as f:
+        f.write(r.content)
+
+model, expected_features = joblib.load(MODEL_PATH)
 
 # Extract city column names from expected_features
 city_columns = [col for col in expected_features if 'City_' in col]
