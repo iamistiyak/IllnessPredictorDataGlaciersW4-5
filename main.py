@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 import pandas as pd
 import numpy as np
-import joblib
+import joblib, requests
 import os
 import gc
 
