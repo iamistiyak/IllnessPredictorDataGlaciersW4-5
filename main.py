@@ -8,7 +8,8 @@ import os
 app = Flask(__name__)
 
 MODEL_PATH = "illness_model.pkl"
-MODEL_URL = "https://drive.google.com/uc?export=download&id=1dk31QrP6NxE2R5rO1brDW-mUKFpro32t"
+MODEL_URL = "https://drive.google.com/uc?export=download&id=1QxpL2Vi_Lhoo2k3Vt0Q983nkHlEXOWj1"
+
 
 # Global variables (initially None)
 model = None
