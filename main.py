@@ -8,7 +8,7 @@ import os
 app = Flask(__name__)
 
 MODEL_PATH = "illness_model.pkl"
-MODEL_URL = "https://drive.google.com/uc?export=download&id=1QxpL2Vi_Lhoo2k3Vt0Q983nkHlEXOWj1"
+MODEL_URL = "https://drive.google.com/uc?export=download&id=1TEwI_HqeY7v_3nJl5Y6wo9CHHPcORa7k"
 
 
 # Global variables (initially None)
@@ -72,3 +72,4 @@ def home():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
+
