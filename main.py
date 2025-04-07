@@ -1,15 +1,15 @@
 from flask import Flask, request, render_template
 import pandas as pd
 import numpy as np
-import requests
 import joblib
 import os
+import requests
 
 app = Flask(__name__)
 
-MODEL_PATH = "illness_model.pkl"
+# Use environment variable for the model path
+MODEL_PATH = os.environ.get("MODEL_PATH", "illness_model.pkl")
 MODEL_URL = "https://drive.google.com/uc?export=download&id=1TEwI_HqeY7v_3nJl5Y6wo9CHHPcORa7k"
-
 
 # Global variables (initially None)
 model = None
@@ -71,5 +71,5 @@ def home():
     return render_template("index.html", cities=cities, genders=genders)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True)
-
+    # Gunicorn will handle the production server, so this line will not be used in Render deployment
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000))) 
